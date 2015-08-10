@@ -13,17 +13,17 @@ For background, please see associated blog post at http://www.contextis.com/reso
 7. Open a shell (adb shell), su to root, then type:
 
 
-    echo -n g > /proc/sysrq-trigger
+    ```echo -n g > /proc/sysrq-trigger```
 
 
 8. Hit enter
 9. On your host machine fire up GDB:
 
-
+```
     arm-eabi-gdb ./vmlinux
     (gdb) set remoteflow off
     (gdb) set remotebaud 115200
     (gdb) target remote /dev/ttyUSB0
-
+```
 
 You should hit the KGDB breakpoint and be able to continue, examine memory, etc.
